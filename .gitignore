@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io/api/python,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=python,visualstudiocode
 venv/
+src/bdUploader/variables.py
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
