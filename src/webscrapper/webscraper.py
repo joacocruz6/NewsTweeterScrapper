@@ -51,7 +51,7 @@ def dump_json(data: list,jfile: str)->None:
     Returns:
         None -- Creates and dump the data on the json file
     """
-    with open(jfile) as output:
+    with open(jfile,'w') as output:
         json.dump(data,output)
     return
 def main(args: list)->int:
