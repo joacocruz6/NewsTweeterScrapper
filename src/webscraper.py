@@ -20,10 +20,7 @@ def getContent(url:str):
     response = requests.get(url,timeout=5)
     content = BeautifulSoup(response.content,"html.parser")
     return content
-
-def main(args: list)->int:
-    url = args[1]
-    content = getContent(url)
+def getData(content)->list:
     tweets = content.findAll('div',attrs = {"class" : "tweet"})
     data = list()
     for tweet in tweets:
@@ -36,6 +33,12 @@ def main(args: list)->int:
         tweet_text = tweet_content.find('p', attrs={"class" : "tweet-text"}).text
         tweet_data['text'] = tweet_text
         data.append(tweet_data)
+    return data
+def main(args: list)->int:
+    url = args[1]
+    content = getContent(url)
+    data = getData(content)
+    
     print(data)
     return 0
 if __name__ == "__main__":
