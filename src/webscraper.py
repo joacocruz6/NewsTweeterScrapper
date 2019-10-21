@@ -33,7 +33,10 @@ def main(args: list)->int:
         tweet_data["user"] = user_name
         date_published = tweet_content.find('a',attrs={"class" : "tweet-timestamp"}).attrs['title']
         tweet_data["date"] = date_published
+        tweet_text = tweet_content.find('p', attrs={"class" : "tweet-text"}).text
+        tweet_data['text'] = tweet_text
         data.append(tweet_data)
+    print(data)
     return 0
 if __name__ == "__main__":
     main(sys.argv)
