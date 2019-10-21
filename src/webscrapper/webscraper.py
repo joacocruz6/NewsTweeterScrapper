@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 import json
-
+ROUTE = '../jsonData/'
 def getContent(url:str):
     """
     Gets the content for a given url in the web
@@ -21,6 +21,14 @@ def getContent(url:str):
     content = BeautifulSoup(response.content,"html.parser")
     return content
 def getData(content)->list:
+    """Get the important data of the tweeter scrapper for the json document
+    
+    Arguments:
+        content {[type]} -- The content of the tweeter account
+    
+    Returns:
+        list -- list of dictionaries with three keys -name,date,text- on which the data will be dump on
+    """
     tweets = content.findAll('div',attrs = {"class" : "tweet"})
     data = list()
     for tweet in tweets:
@@ -34,12 +42,24 @@ def getData(content)->list:
         tweet_data['text'] = tweet_text
         data.append(tweet_data)
     return data
+def dump_json(data: list,jfile: str)->None:
+    """Dump the data to a json file to be uploaded on the DB afterwards
+    
+    Arguments:
+        data {list} -- the data that will be dumped
+        jfile {str} -- The route to the file that will be dumped the data on
+    Returns:
+        None -- Creates and dump the data on the json file
+    """
+    with open(jfile) as output:
+        json.dump(data,output)
+    return
 def main(args: list)->int:
     url = args[1]
     content = getContent(url)
     data = getData(content)
-    
-    print(data)
+    json_file = ROUTE + args[2]
+    dump_json(data,json_file)
     return 0
 if __name__ == "__main__":
-    main(sys.argv)
+    main(sys.argv) # argv must contain in first position the webpage and in the second position the json file name with it's extension
