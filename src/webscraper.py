@@ -21,12 +21,11 @@ def getContent(url:str):
     content = BeautifulSoup(response.content,"html.parser")
     return content
 
-def main(args):
+def main(args: list)->int:
     url = args[1]
     content = getContent(url)
-    print(content)
+    tweets = content.findAll('div',attrs = {"class" : "tweet"})
+    print(tweets)
     return 0
-
-
 if __name__ == "__main__":
     main(sys.argv)
