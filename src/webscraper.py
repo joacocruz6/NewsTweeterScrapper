@@ -31,6 +31,8 @@ def main(args: list)->int:
         tweet_content = tweet.find('div',attrs = {"class" : "content"})
         user_name = tweet_content.find('a',attrs = {"class" : "account-group"}).find("strong",attrs={"class" : "fullname"}).text
         tweet_data["user"] = user_name
+        date_published = tweet_content.find('a',attrs={"class" : "tweet-timestamp"}).attrs['title']
+        tweet_data["date"] = date_published
         data.append(tweet_data)
     return 0
 if __name__ == "__main__":
