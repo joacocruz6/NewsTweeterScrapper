@@ -35,7 +35,7 @@ def getData(content) -> list:
     """
     tweets = content.findAll('div', attrs={"class": "tweet"})
     data = list()
-    for tweet in tweets:
+    for tweet in tweets[1:]:
         tweet_data = dict()
         tweet_content = tweet.find('div', attrs={"class": "content"})
         print(tweet.attrs['data-tweet-id'])

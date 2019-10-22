@@ -18,7 +18,7 @@ def main(args: list) -> int:
             raw_data = json.load(read_data)
             for data in raw_data:
                 query = """INSERT INTO scrapper.tweets ("tweet_id","user",hour,tweet_text) VALUES (%s,%s,%s,%s)"""
-                record_to_insert = (data['user'], data['date'], data['text'])
+                record_to_insert = (data['id'],data['user'], data['date'], data['text'])
                 cursor.execute(query, record_to_insert)
                 connection.commit()
                 count = cursor.rowcount
