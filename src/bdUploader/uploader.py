@@ -20,10 +20,13 @@ def main(args: list) -> int:
             for data in raw_data:
                 query = f"INSERT INTO scrapper.{table} (tweet_id,twitter_user,hour,tweet_text) VALUES (%s,%s,%s,%s)"
                 record_to_insert = (data['id'],data['user'], data['date'], data['text'])
-                cursor.execute(query, record_to_insert)
-                connection.commit()
-                count = cursor.rowcount
-                print(count, "Record inserted into the table")
+                try:
+                    cursor.execute(query, record_to_insert)
+                    connection.commit()
+                    count = cursor.rowcount
+                    print(count, "Record inserted into the table")
+                except:
+                    pass
     except (Exception, psycopg2.Error) as error:
         print("Error while connection to Postgres", error)
     finally:
