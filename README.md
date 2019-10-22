@@ -12,7 +12,11 @@ pip install bs4 && pip install requests
 
 
 
-##### Based on and some other tutorials
+### Based on and some other tutorials
 This was based on the following article:
 - [Building a web scrapper](https://hackernoon.com/building-a-web-scraper-from-start-to-finish-bb6b95388184)
 - [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+### Contributors
+The contributors on this project where:
+- [Joaquin Cruz](https://github.com/joacocruz6)
+- [Diego Ortego](https://github.com/Gedoix)
