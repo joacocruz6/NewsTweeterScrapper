@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 import json
+import time
 ROUTE = '../jsonData/'
 
 
@@ -72,6 +73,7 @@ def main(args: list) -> int:
     data = getData(content)
     json_file = ROUTE + args[2]
     dump_json(data, json_file)
+    time.sleep(8)
     return 0
 
 
