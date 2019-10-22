@@ -33,5 +33,7 @@ cd ../bdUploader/ && python3 uploader.py camila_vallejo_data.json politics_tweet
 cd ../bdUploader/ && python3 uploader.py felipe_kast_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py bea_sanchez_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py jose_antonio_kast_data.json politics_tweets
-python3 exporter.py
-cd ../statistics/ && python3 wordclouds.py
+python3 exporter.py tweets news
+python3 exporter.py politics_tweets politics
+cd ../statistics/ && python3 wordcloud_generator.py news
+cd ../statistics/ && python3 wordclouds_generator.py politics
