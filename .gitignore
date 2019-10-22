@@ -3,6 +3,7 @@
 jsonData/
 src/bdUploader/variables.py
 src/bdUploader/exports.csv
+venv/
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
