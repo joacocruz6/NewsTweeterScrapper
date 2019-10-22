@@ -11,13 +11,10 @@ def main(args: list) -> int:
     try:
         connection = psycopg2.connect(user=USERNAME,password = PASSWORD, host = HOST, port = PORT, database = DBNAME)
         cursor = connection.cursor()
-        seen = set()
         with open(jfile,'r') as read_data:
             raw_data = json.load(read_data)
             for data in raw_data:
-                query = """INSERT INTO scrapper.tweets ("user",hour,tweet_text) VALUES (%s,%s,%s)"""
-                keys = (data['user'],data['date'])
-                
+                query = """INSERT INTO scrapper.tweets ("tweet_id","user",hour,tweet_text) VALUES (%s,%s,%s,%s)"""
                 record_to_insert = (data['user'],data['date'],data['text'])
                 cursor.execute(query,record_to_insert)
                 connection.commit()
