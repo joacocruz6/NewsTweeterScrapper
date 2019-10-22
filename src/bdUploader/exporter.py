@@ -14,6 +14,7 @@ def main(args: list)->int:
         records = cursor.fetchall()
         with open('exports.csv','w',newline='') as csvfile:
             writer = csv.writer(csvfile)
+            writer.writerow(["tweet_id","twitter_user","hour","tweet_text"])
             for row in records:
                 writer.writerow(row)
     except(Exception,psycopg2.Error) as error:
