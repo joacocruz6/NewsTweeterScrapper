@@ -20,6 +20,7 @@ def getContent(url: str):
             The content as a BeautifulSoup object
         ]
     """
+    print(f"Now scrapping {url}")
     response = requests.get(url, timeout=5)
     content = BeautifulSoup(response.content, "html.parser")
     return content
