@@ -73,7 +73,7 @@ def main(args: list) -> int:
     data = getData(content)
     json_file = ROUTE + args[2]
     dump_json(data, json_file)
-    time.sleep(8)
+    time.sleep(8) # 8 seconds to wait for next execution
     return 0
 
 
