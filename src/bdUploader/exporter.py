@@ -6,13 +6,15 @@ from uploader import HOST,DBNAME,PORT,DATA_PATH;
 
 def main(args: list)->int:
     try:
+        table = args[1]
+        table_type = args[2]
         connection = psycopg2.connect(
             user=USERNAME,password=PASSWORD,host=HOST,port=PORT,database=DBNAME)
         cursor = connection.cursor()
-        query = "SELECT * FROM scrapper.tweets"
+        query = f"SELECT * FROM scrapper.{table}"
         cursor.execute(query)
         records = cursor.fetchall()
-        with open('exports.csv','w',newline='') as csvfile:
+        with open(f'exports_{table_type}.csv','w',newline='') as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(["tweet_id","twitter_user","hour","tweet_text"])
             for row in records:
