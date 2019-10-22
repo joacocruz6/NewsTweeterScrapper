@@ -29,7 +29,7 @@ cd ../bdUploader/ && python3 uploader.py la_cuarta_data.json tweets
 cd ../bdUploader/ && python3 uploader.py lun_data.json tweets
 cd ../bdUploader/ && python3 uploader.py sebastian_pinera_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py boric_data.json politics_tweets
-cd ../bdUploader/ && python3 uploader.py camila_vallejo_vallejo.json politics_tweets
+cd ../bdUploader/ && python3 uploader.py camila_vallejo_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py felipe_kast_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py bea_sanchez_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py jose_antonio_kast_data.json politics_tweets
