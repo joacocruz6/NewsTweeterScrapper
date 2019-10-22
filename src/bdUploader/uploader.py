@@ -10,6 +10,7 @@ DATA_PATH = '../jsonData/'
 
 def main(args: list) -> int:
     jfile = DATA_PATH + args[1]
+    table = args[2]
     try:
         connection = psycopg2.connect(
             user=USERNAME, password=PASSWORD, host=HOST, port=PORT, database=DBNAME)
@@ -17,7 +18,7 @@ def main(args: list) -> int:
         with open(jfile, 'r') as read_data:
             raw_data = json.load(read_data)
             for data in raw_data:
-                query = """INSERT INTO scrapper.tweets (tweet_id,twitter_user,hour,tweet_text) VALUES (%s,%s,%s,%s)"""
+                query = f"INSERT INTO scrapper.{table} (tweet_id,twitter_user,hour,tweet_text) VALUES (%s,%s,%s,%s)"
                 record_to_insert = (data['id'],data['user'], data['date'], data['text'])
                 cursor.execute(query, record_to_insert)
                 connection.commit()
