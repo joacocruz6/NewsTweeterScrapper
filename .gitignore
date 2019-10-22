@@ -3,6 +3,8 @@
 jsonData/
 src/bdUploader/variables.py
 src/bdUploader/exports.csv
+*.png
+*.csv
 venv/
 .vscode/
 ### Python ###
