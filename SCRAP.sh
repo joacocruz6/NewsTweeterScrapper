@@ -9,6 +9,8 @@ cd ../webscrapper/ && python3 webscraper.py https://twitter.com/meganoticiascl m
 cd ../webscrapper/ && python3 webscraper.py https://twitter.com/24HorasTVN tvn_data.json
 cd ../webscrapper/ && python3 webscraper.py https://twitter.com/lacuarta la_cuarta_data.json
 cd ../webscrapper/ && python3 webscraper.py https://twitter.com/lun lun_data.json
+cd ../webscrapper/ && python3 webscraper.py https://twitter.com/Cooperativa cooperativa_data.json
+cd ../webscrapper/ && python3 webscraper.py https://twitter.com/biobio biobio_data.json
 cd ../webscrapper/ && python3 webscraper.py https://twitter.com/sebastianpinera sebastian_pinera_data.json
 cd ../webscrapper/ && python3 webscraper.py https://twitter.com/gabrielboric boric_data.json
 cd ../webscrapper/ && python3 webscraper.py https://twitter.com/camila_vallejo camila_vallejo_data.json
@@ -27,12 +29,15 @@ cd ../bdUploader/ && python3 uploader.py mega_data.json tweets
 cd ../bdUploader/ && python3 uploader.py tvn_data.json tweets
 cd ../bdUploader/ && python3 uploader.py la_cuarta_data.json tweets
 cd ../bdUploader/ && python3 uploader.py lun_data.json tweets
+cd ../bdUploader/ && python3 uploader.py cooperativa_data.json tweets
+cd ../bdUploader/ && python3 uploader.py biobio_data.json tweets
 cd ../bdUploader/ && python3 uploader.py sebastian_pinera_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py boric_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py camila_vallejo_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py felipe_kast_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py bea_sanchez_data.json politics_tweets
 cd ../bdUploader/ && python3 uploader.py jose_antonio_kast_data.json politics_tweets
+
 python3 exporter.py tweets news
 python3 exporter.py politics_tweets politics
 cd ../statistics/ && python3 wordcloud_generator.py news
