@@ -9,6 +9,8 @@ pip install bs4 && pip install requests
 For the wordclouds and everything I will be using pandas, matplotlib and wordcloud libraries to do the statistics and analysis.
 *Recomendation:* Make a virtual environment to the project.
 
+## How it works
+This scraps twitter and injects it's information to a postgres database
 
 
 
